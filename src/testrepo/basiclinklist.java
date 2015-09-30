@@ -82,7 +82,27 @@ public class basiclinklist {
 			current=current.getNext();
 		}
 	}
-	
+	public void removeduplis(){
+		if(head==null)return;
+		Node previous =head;
+		Node current=head.getNext();
+		while (current!=null){
+			Node runner=head;
+			while(runner!=current){
+				if(current.getData().equalsIgnoreCase(runner.getData())){
+					Node tmp= current.getNext();
+					previous.setNext(tmp);
+					current=tmp;
+					break;
+				}runner=runner.getNext();
+			}
+			if(runner==current){
+				previous=current;
+				current=current.getNext();
+			}
+		}
+		printit();
+	}
 	public static void main(String args[])throws IOException{
 		char ch;
 		BufferedReader buf= new BufferedReader(new InputStreamReader(System.in));
