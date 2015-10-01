@@ -103,6 +103,23 @@ public class basiclinklist {
 		}
 		printit();
 	}
+	
+	public void nthlast(int n){
+		if (head==null||n<1)return;
+		Node p1=head;
+		Node p2=head;
+		
+		for (int i=1;i<n;i++){
+			if (p2==null)return;
+			p2=p2.getNext();
+		}
+		while(p2.getNext()!=null){
+			p1=p1.getNext();
+			p2=p2.getNext();
+		}
+		System.out.println(p1.data);
+	}
+	
 	public static void main(String args[])throws IOException{
 		char ch;
 		BufferedReader buf= new BufferedReader(new InputStreamReader(System.in));
