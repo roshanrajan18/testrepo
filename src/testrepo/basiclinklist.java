@@ -120,18 +120,32 @@ public class basiclinklist {
 		System.out.println(p1.data);
 	}
 	
+	public Node addingList(Node a, Node b, int carry){
+		if(a==null && b==null)return null;
+		Node result=new Node(null);
+		int value=Integer.valueOf(carry);
+		if(a.data!=null)value+=Integer.valueOf(a.data);
+		if (b.data!=null)value+=Integer.valueOf(b.data);
+		int test=Integer.valueOf(value)%10;
+		result.data=String.valueOf(test);
+		Node more=addingList(a==null ? null:a.next,b==null ?null:b.next, test>9?1:0);
+		result.setNext(more);
+		return result;
+	}
+	
 	public static void main(String args[])throws IOException{
 		char ch;
 		BufferedReader buf= new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Enter the no of elements");
-		int n=Integer.parseInt(buf.readLine());
+//		System.out.println("Enter the no of elements");
+//		int n=Integer.parseInt(buf.readLine());
 		basiclinklist test= new basiclinklist();
-		for (int i=1;i<=n;i++){
-			System.out.println("Enter the link value");
-			String x=buf.readLine();
-			
-			test.add(x);
-		}
+		basiclinklist test2= new basiclinklist();
+//		for (int i=1;i<=n;i++){
+//			System.out.println("Enter the link value");
+//			String x=buf.readLine();
+//			
+//			test.add(x);
+//		}
 
 		do{
 			System.out.println("Here are your choices");
@@ -168,6 +182,30 @@ public class basiclinklist {
             case 'E' : 
            	 System.out.println("The List is");               
                 break;  
+            case 'F' : 
+            	System.out.println("Enter the no of elements");
+        		int d= Integer.parseInt(buf.readLine());
+        		for (int i=1;i<=d;i++){
+        			System.out.println("Enter the Link");
+        			String a = buf.readLine();
+        			test.add(a);
+        		}
+        		System.out.println("Enter the no of elements");
+        		int m= Integer.parseInt(buf.readLine());
+        		for (int i=1;i<=m;i++){
+        			System.out.println("Enter the Link");
+        			String a = buf.readLine();
+        			test2.add(a);
+        		}
+        		Node a=test.getatIndex(1);
+        		Node b=test2.getatIndex(1);
+        		Node asd=test.addingList(a, b, 0);
+        		for(int i=1;i<=test.size();i++){
+        			System.out.println(asd.data);
+        			asd=asd.getNext();
+        		}
+        		break;
+                  
 			}
 			test.printit();
 			System.out.println("Do you want to continue ? Y/N");
