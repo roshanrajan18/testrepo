@@ -27,6 +27,8 @@ import java.io.*;
 		return len;
 	}
 	
+	
+	
 	public int peek(){
 		if(isEmpty()){
 			System.out.println("Empty Stack");
@@ -97,11 +99,8 @@ import java.io.*;
 			System.out.println("Top of Stack Popped"+pop);
 		break;
 		case 3:
-			int peek=stk.pop();
-			if (peek==0)
-				System.out.println("Stack empty already");
-			else
-			System.out.println("Top of Stack Popped"+peek);
+			int peek=stk.peek();
+			System.out.println("PEEK IS"+peek);
 		break;
 		case 4:
 			if(stk.isEmpty())System.out.println("Stack is Empty");
