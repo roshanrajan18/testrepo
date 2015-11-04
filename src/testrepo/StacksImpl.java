@@ -51,11 +51,20 @@ public class StacksImpl {
 	
 	public void Display(){
 		Node current=top;
-			do{
-				System.out.println(current.data);
-				if (current.below!=null)
-			current=current.below;}
-			while(current.below!=null);
+		int counter=0;
+		for (int i=0;i<size;i++){
+			System.out.println(current.data);
+			if(current.below!=null)
+			current=current.below;
+			else break;
+		}
+//			do{
+//				System.out.println(current.data);
+////				if (current.below!=null)
+//			 current=current.below;
+//			counter++;
+//			if (current.below==null)break;}
+//			while(counter<=size);
 		
 	}
 	

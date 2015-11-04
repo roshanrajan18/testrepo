@@ -77,9 +77,10 @@ public class SetOfStacks {
 		
 		for (int i=0;i<test.stacks.size();i++){
 			StacksImpl ack=test.stacks.get(i);
-			for(int j=0;j<ack.size;j++){
-				ack.Display();
-			}
+			ack.Display();
+//			for(int j=0;j<ack.size;j++){
+//				ack.Display();
+//			}
 			
 		}
 		System.out.println("Continue");
