@@ -170,6 +170,25 @@ public class Bsttreeimpl {
 			System.out.println(node.getData());
 		}
 	}
+	
+	public int maxDepth(Bsttree node){
+		if (node == null)
+			return 0;
+		else
+			return 1+ Math.max(maxDepth(node.left),maxDepth(node.right));
+	}
+	
+	public int minDepth(Bsttree node){
+		if (node == null)
+			return 0;
+		else
+			return 1+ Math.min(minDepth(node.left),minDepth(node.right));
+	}
+	
+	public boolean isBalanced(Bsttree node){
+		return (maxDepth(node) - minDepth(node) <=1);
+	}
+	
 	}
 	
 	

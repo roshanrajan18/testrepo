@@ -19,7 +19,7 @@ public class BasicBST {
 	         System.out.println("3. search ");
 	         System.out.println("4. count nodes ");
 	         System.out.println("5. check empty "); 
-	         
+	         System.out.println("6. Is tree balanced ? ");
 	         System.out.println("Enter your Choice ?");
 	         
 	         ch=Integer.parseInt(buff.readLine());
@@ -55,6 +55,11 @@ public class BasicBST {
 	        	 else
 	        		 System.out.println("Nope not emplty");
 	        	 break;
+	         case 6:
+	        	 if (bst.isBalanced(bst.root))
+	        		 System.out.println("Yes the tree is balanced");
+	        	 else 
+	        		 System.out.println("No, its not");
 	        	 
 	         }
 	         System.out.println("inorder");
