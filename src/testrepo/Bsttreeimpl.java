@@ -189,6 +189,27 @@ public class Bsttreeimpl {
 		return (maxDepth(node) - minDepth(node) <=1);
 	}
 	
+	public Bsttree addtoTree(int arr[],int start, int end){
+		
+		if(end<start)return null;
+		
+		int mid = (start+end)/2;
+		Bsttree n = new Bsttree(arr[mid]);
+		n.left=addtoTree(arr, start,mid -1);
+		n.right=addtoTree(arr, mid+1, end);
+		System.out.println("inorder");
+		inorder(n);
+		System.out.println("preorder");
+		preorder(n);
+		System.out.println("postorder");
+		postorder(n);
+		return n;
+	}
+	
+	public Bsttree createTreefromArray(int array[]){
+		return addtoTree(array, 0,array.length-1);
+	}
+	
 	}
 	
 	
