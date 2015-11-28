@@ -20,6 +20,7 @@ public class BasicBST {
 	         System.out.println("4. count nodes ");
 	         System.out.println("5. check empty "); 
 	         System.out.println("6. Is tree balanced ? ");
+	         System.out.println("7 Build tree from Array");
 	         System.out.println("Enter your Choice ?");
 	         
 	         ch=Integer.parseInt(buff.readLine());
@@ -60,6 +61,16 @@ public class BasicBST {
 	        		 System.out.println("Yes the tree is balanced");
 	        	 else 
 	        		 System.out.println("No, its not");
+	        	 break;
+	         case 7:
+	        	 System.out.println("Enter the length of the array");
+	        	 int len=Integer.parseInt(buff.readLine());
+	        	 int arr[]=new int[len];
+	        	 for(int i=0;i<len;i++){
+	        		 System.out.println("Enter the element");
+	        		  arr[i]=Integer.parseInt(buff.readLine());
+	        	 }
+	        	 bst.createTreefromArray(arr);
 	        	 
 	         }
 	         System.out.println("inorder");
