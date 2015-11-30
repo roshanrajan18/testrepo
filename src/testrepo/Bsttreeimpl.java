@@ -1,5 +1,5 @@
 package testrepo;
-
+import java.util.*;
 public class Bsttreeimpl {
 
 	Bsttree root;
@@ -208,6 +208,41 @@ public class Bsttreeimpl {
 	
 	public Bsttree createTreefromArray(int array[]){
 		return addtoTree(array, 0,array.length-1);
+	}
+	
+	public ArrayList<LinkedList<Bsttree>> findlevel(Bsttree root){
+		int level=0;
+		ArrayList<LinkedList<Bsttree>> result = new ArrayList<LinkedList<Bsttree>>();
+		LinkedList<Bsttree> list = new LinkedList<Bsttree>();
+		list.add(root);
+		result.add(level, list);
+		while(true){
+			list= new LinkedList<Bsttree>();
+			for(int i=0;i<result.get(level).size();i++){
+				Bsttree n = result.get(level).get(i);
+				if(n!=null){
+					if(n.left!=null)list.add(n.left);
+					if(n.right!=null)list.add(n.right);
+				}
+			}
+			if(list.size()>0){
+				result.add(level+1,list);
+			} else {
+				break;
+			}
+			level++;
+		}
+		return result;
+	}
+	
+	public void findlevel(){
+		ArrayList<LinkedList<Bsttree>> result = new ArrayList<LinkedList<Bsttree>>();
+		result=findlevel(root);
+		for(int i=0;i<result.size();i++){
+			for(int j=0;j<result.get(i).size();j++)
+				{System.out.println("On Depth "+ i);
+				System.out.println(result.get(i).get(j).data);}
+		}
 	}
 	
 	}
