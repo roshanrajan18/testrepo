@@ -21,6 +21,7 @@ public class BasicBST {
 	         System.out.println("5. check empty "); 
 	         System.out.println("6. Is tree balanced ? ");
 	         System.out.println("7 Build tree from Array");
+	         System.out.println("8 Divide the tree into Linked lists of various depths");
 	         System.out.println("Enter your Choice ?");
 	         
 	         ch=Integer.parseInt(buff.readLine());
@@ -71,6 +72,9 @@ public class BasicBST {
 	        		  arr[i]=Integer.parseInt(buff.readLine());
 	        	 }
 	        	 bst.createTreefromArray(arr);
+	         case 8:
+	        	 bst.findlevel();
+	        	 break;
 	        	 
 	         }
 	         System.out.println("inorder");
