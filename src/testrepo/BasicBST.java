@@ -22,6 +22,7 @@ public class BasicBST {
 	         System.out.println("6. Is tree balanced ? ");
 	         System.out.println("7 Build tree from Array");
 	         System.out.println("8 Divide the tree into Linked lists of various depths");
+	         System.out.println("9 Inverting the Binary Tree");
 	         System.out.println("Enter your Choice ?");
 	         
 	         ch=Integer.parseInt(buff.readLine());
@@ -75,7 +76,11 @@ public class BasicBST {
 	         case 8:
 	        	 bst.findlevel();
 	        	 break;
-	        	 
+	         case 9:
+	        	 System.out.println("Inverting the tree");
+	        	 bst.findlevel2();
+	        	 break;
+	        	
 	         }
 	         System.out.println("inorder");
         	 bst.inorder();
