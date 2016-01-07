@@ -245,6 +245,24 @@ public class Bsttreeimpl {
 		}
 	}
 	
+	public void findlevel2(){
+		ArrayList<LinkedList<Bsttree>> result = new ArrayList<LinkedList<Bsttree>>();
+		result=findlevel(root);
+		int left,right;
+		for(int i=0;i<result.size();i++){
+			for( left=0, right=result.get(i).size()-1; left<right; left++,right--)
+				{int tmp=result.get(i).get(left).data;
+				result.get(i).get(left).data=result.get(i).get(right).data;
+				result.get(i).get(right).data=tmp;}
+		}
+		
+		for(int i=0;i<result.size();i++){
+			for(int j=0;j<result.get(i).size();j++)
+				{System.out.println("On Depth "+ i);
+				System.out.println(result.get(i).get(j).data);}
+		}
+	}
+	
 	}
 	
 	
