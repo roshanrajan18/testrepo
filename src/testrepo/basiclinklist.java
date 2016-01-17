@@ -76,7 +76,7 @@ public class basiclinklist {
 		return true;
 	}
 	public void printit(){
-		Node current=head;
+		Node current=this.head;
 		while(current!=null){
 			System.out.println(current.getData());
 			current=current.getNext();
@@ -131,6 +131,18 @@ public class basiclinklist {
 		Node more=addingList(a==null ? null:a.next,b==null ?null:b.next, test>9?1:0);
 		result.setNext(more);
 		return result;
+	}
+	
+	public void sortList(basiclinklist head){
+		basiclinklist sorted=new basiclinklist();
+			for(int i=1;i<=head.size();i=i+2){
+				sorted.add(head.getatIndex(i).data);
+			}
+			for(int i=2;i<=head.size();i=i+2){
+				sorted.add(head.getatIndex(i).data);
+			}
+		sorted.printit();
+		
 	}
 	
 	public static void main(String args[])throws IOException{
@@ -205,6 +217,16 @@ public class basiclinklist {
         			asd=asd.getNext();
         		}
         		break;
+            case 'G':
+            	System.out.println("Enter the no of elements");
+        		int digi= Integer.parseInt(buf.readLine());
+        		for (int i=1;i<=digi;i++){
+        			System.out.println("Enter the Link");
+        			String ele = buf.readLine();
+        			test.add(ele);
+        		}
+        		
+        		test.sortList(test);
                   
 			}
 			test.printit();
