@@ -37,7 +37,7 @@ public class MakingChange {
 		System.out.println("Enter the amount for finding change permutations ?");
 		
 		int amnt=Integer.parseInt(buff.readLine());
-		System.out.println("The no of Permutations are "+1changepermutations(amnt, 25));
+		System.out.println("The no of Permutations are "+changepermutations(amnt, 25));
 	}
 
 }
