@@ -109,6 +109,29 @@ public class Linkdlist {
 		System.out.println(ptr.getData());
 	}
 	
+	public void removeDupes(){
+		Linkdlistnode previous=start;
+		Linkdlistnode current=previous.getLink();
+		
+		while(current!=null){
+			Linkdlistnode runner=start;
+			while(runner!=current){
+				if(runner.data==current.data){
+					Linkdlistnode tmp=current.getLink();
+					previous.link=tmp;
+					current=current.getLink();
+					break;
+				}
+				runner=runner.getLink();
+			}
+			if(runner==current){
+				previous=current;
+				current=current.getLink();
+			}
+		}
+		
+	}
+	
 	public static void main(String args[])throws IOException{
 				
 			BufferedReader buff=new BufferedReader(new InputStreamReader(System.in));
