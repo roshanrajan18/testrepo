@@ -132,6 +132,20 @@ public class Linkdlist {
 		
 	}
 	
+	public void nthlast(int n){
+		Linkdlistnode p1=start;
+		Linkdlistnode p2=start;
+		
+		for(int i=0;i<n-1;i++){
+			p2=p2.getLink();
+		}
+		while(p2.getLink()!=null){
+			p1=p1.getLink();
+			p2=p2.getLink();
+		}
+		System.out.println("Data is "+p1.getData());
+	}
+	
 	public static void main(String args[])throws IOException{
 				
 			BufferedReader buff=new BufferedReader(new InputStreamReader(System.in));
