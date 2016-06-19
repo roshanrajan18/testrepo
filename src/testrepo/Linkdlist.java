@@ -146,6 +146,28 @@ public class Linkdlist {
 		System.out.println("Data is "+p1.getData());
 	}
 	
+	public Linkdlistnode addlists(Linkdlistnode p1, Linkdlistnode p2, int carry){
+		
+		if (p1== null || p2==null){
+			return null;
+		}
+		
+		Linkdlist result=new Linkdlist();
+		int value=carry;
+		if(p1 !=null)
+			value+=p1.data;
+		if(p2 !=null)
+			value+=p2.data;
+		
+		result.insertAtStart(value%10);
+		Linkdlistnode more = new Linkdlistnode();
+		more=addlists(p1==null?null:p1.getLink(), p2==null?null:p2.getLink(), value>=10?1:0);
+		result.insertAtEnd(more.data);
+		return result.start;
+	}
+	
+	
+	
 	public static void main(String args[])throws IOException{
 				
 			BufferedReader buff=new BufferedReader(new InputStreamReader(System.in));
